@@ -1,0 +1,96 @@
+<div class="responsive">
+	<form [formGroup]="myForm">
+		
+		<div class="scroller">
+			<div class="applicantName">Jessica Jones</div>
+			<h3>Summary</h3>
+
+			<p>Please make sure to provide the details for each section below. If you have supporting documentation,
+				select the cloud icon to upload the documents.</p>
+
+			<mat-radio-group (change)="onChoice($event)" formControlName="pageChoice">
+				<mat-label>
+					Choice of KB or Standard Form<br>
+					(temporary hack until services are ready):
+				</mat-label>
+				<mat-radio-button value="KB">KB</mat-radio-button>
+				<mat-radio-button value="Standard">Standard</mat-radio-button>
+			</mat-radio-group>
+
+			<table class="activityTable">
+				<thead>
+					<th>Functional Assessment Summary</th>
+					<th class="narrow">Status</th>
+					<th class="narrow">User Actions</th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let item of data.FunctionalAssessmentSummary" >
+						<td>{{item.activity}}</td>
+						<td *ngIf="item.complete">
+							<mat-icon class="green">check</mat-icon> <span>Complete</span>
+						</td>
+						<td *ngIf="!item.complete">
+							<mat-icon class="red">close</mat-icon> <span>Incomplete</span>
+						</td>
+						<td>
+							<a [href]="item.action">GO TO DETAILS</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<ng-container *ngIf="showAcuity">
+
+				<h3>Acuity Score</h3>
+
+				<table class="activityTable">
+					<thead>
+						<th>Functional Measure</th>
+						<th class="narrow">Acuity Score</th>
+					</thead>
+					<tbody class="tight">
+						<tr *ngFor="let item of data.acuityScore" >
+							<td>{{item.name}}</td>
+							<td><b>{{item.value}}</b></td>
+						</tr>
+						<tr class="strong"><td>Maximum Possible Acuity Score</td><td>3</td></tr>
+					</tbody>
+				</table>
+			</ng-container>
+
+			<ng-container *ngIf="showSupportingDocumentation">
+				<hr>
+				<table class="documentTable">
+					<thead>
+						<th>Supporting Documentation</th>
+						<th>&nbsp;</th><th>&nbsp;</th>
+					</thead>
+					<tbody >
+						<tr *ngFor="let item of data.supportingDocumentation" >
+							<td>{{item.name}}</td>
+							<ng-container *ngIf="item.uploaded">
+								<td>
+									<mat-icon class="green">check</mat-icon>
+								</td>
+								<td>
+									<mat-icon class="orange">delete_forever</mat-icon>
+								</td>
+							</ng-container>
+							<ng-container *ngIf="!item.uploaded">
+								<td>
+									<mat-icon class="blue">cloud_upload</mat-icon>
+								</td><td>&nbsp;</td>
+							</ng-container>
+						</tr>
+					</tbody>
+				</table>
+			</ng-container>
+		</div>
+		<div class="buttonBar">
+			<button mat-flat-button color="primary" (click)="back()" class="perlss-click-button-white">BACK</button>
+			<button mat-flat-button color="primary" (click)="saveAndExit()" class="perlss-click-button-white-noborder">SAVE
+				AND EXIT</button>
+			<button mat-flat-button color="primary" class="perlss-click-button" (click)="next()">NEXT</button>
+		</div>
+	</form>
+</div>

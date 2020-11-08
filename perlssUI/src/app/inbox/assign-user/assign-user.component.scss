@@ -1,0 +1,92 @@
+.close-icon {
+  transform: scale(1.0);
+  cursor: pointer;
+  color: #8b99ac;
+}
+.row-header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 17px 0 10px 0;
+}
+
+.dialog-heading {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: 'Open Sans';
+  color: #174A7C;
+}
+
+.table-td{
+  border: 1px solid black;
+}
+
+table tr:last-child td {
+  border-bottom: 1px solid #174A7C;
+}
+
+
+table {
+  border: 1px solid #174A7C;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+  line-height: 20px !important;
+}
+
+.sendtoback-button{
+  padding-left: 140px;
+}
+
+.update-dialog-heading{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Open Sans';
+  color: #547E1A;
+}
+
+
+
+
+tr.element-row:not(.clicked-row):active {
+  background: #F6FAFF;
+}
+
+tr.clicked-row {
+  background: #EDF4FB;
+  font-weight: bold;
+}
+
+.assignuser-search-box {
+  padding-left: 32px;
+  padding-top: 25px;
+}
+
+.search-heading {
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  color: #547E1A;
+}
+
+.search-users-text {
+  border: 1px solid #B3B3B3;
+  width: 95%;
+  min-height: 40px;
+  padding-left:10px;
+  background-color: #F6FAFF;
+}
+
+.table-th{
+  font-size: 14px;
+  font-weight: bold;
+  color: #04537D;
+}
+
+.button-table-content{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.button-height{
+  height: 50px;
+}

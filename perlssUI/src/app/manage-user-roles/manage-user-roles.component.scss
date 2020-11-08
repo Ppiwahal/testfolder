@@ -1,0 +1,85 @@
+.required {
+    color: #EE3524;
+    font-size: 12px;
+    justify-content: flex-end;
+    display: flex;
+    margin-top: -39px;
+  }
+
+  .wrapper {
+    width:590px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .left {
+    width: 242px;
+    height:185px;
+    border: 2px solid #174A7C;
+  }
+  .right {
+    width: 242px;
+    height:185px;
+    cursor: pointer;
+    border: 2px solid #174A7C;
+  }
+  .mat-icon {
+    font-size: 70px;
+    color:#ED6053;
+    text-align: center;
+  }
+  .icon-style{
+    font-size: 120px;
+    margin-top: -43px;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+  }
+
+  .box1Text{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    &:active, &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .box2Text{
+    margin-top: -55px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: #1B365C;
+    padding: .5vw;
+  }
+
+  .box2Heading{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #CDDDF4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  .box2Content{
+    text-align: center;
+    font-size: 14px;
+    padding-top: 10px;
+  }
+.user-role-heading{
+  color: #4D7E20;
+  font-size: 22px;
+  font-weight: bold;
+}

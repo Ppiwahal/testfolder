@@ -1,0 +1,75 @@
+.page-sub-heading {
+  color: #ed6053;
+  font-size: 18px;
+  font-weight: bold;
+  maring: 10px 0;
+}
+.mar-bot{
+	margin-bottom: 20px
+}
+.cus-cont {
+	padding: 25px;
+}
+.checkbox-row {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.mar-10-right {
+	margin-right: 10px;
+}
+.card-head-custom {
+	background-color: #cdddf4;
+}
+.marg-15{
+	margin: 30px 0;
+}
+.selection-list{
+	margin: 15px 20px 15px 0;
+	border: 1px solid #ccc;
+	padding: 5px;
+	cursor: pointer;
+	div {
+		align-self: center
+	}
+}
+.wid-100{
+width: 100%;
+}
+.req{
+color:red
+}
+
+.flex-container{
+	display: flex;
+	align-item: center;
+	flex-direction: row-reverse;
+}
+.selected-choice{
+	color: white;
+	background-color: #174A7C;
+}
+
+.example-radio-group {
+display: flex;
+flex-direction: column;
+margin: 0px 0px 40px 0px;
+}
+
+.safety-justification {
+	.mat-list-base{
+		padding-top: 0
+	}
+	.list-group-item {
+		padding: 0
+	}
+}
+
+.example-radio-button {
+margin: 5px;
+}
+
+.unselected-choice mat-icon{
+	color: #ccc
+}

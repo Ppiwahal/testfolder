@@ -1,0 +1,66 @@
+<hr>
+<div class="row-header user-role-heading">
+    <span class="col-lg-9 dialog-heading">
+       {{displayMode === 'CREATE' ? 'Create User Role' : 'Edit User Role'}}
+    </span>
+</div>
+
+<form [formGroup]="userRoleForm" (ngSubmit)="saveOrEditUserRole()">
+<div style="margin-top: 45px">
+  <div class="row">
+    <div class="col-md-5">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Entity Type</mat-label>
+        <select matNativeControl formControlName="entityType">
+          <option value="MCO">MCO</option>
+          <option value="LTSS">LTSS</option>
+          <option value="MCD_Blue">MCD - Blue Care</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Entity</mat-label>
+        <select matNativeControl formControlName="entity">
+          <option value="UNT">Blue Care</option>
+          <option value="UNT1">Blue Care1</option>
+          <option value="UNT2">Blue Care3</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row secondary-data-content">
+    <div class="col-md-5">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label><mat-label class="required-color">*</mat-label><b>User Role Name</b></mat-label>
+        <input matInput formControlName="userRoleName">
+      </mat-form-field>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Status</mat-label>
+        <select matNativeControl formControlName="status">
+          <option *ngFor = "let statusOption of  statusOptions" value={{statusOption.code}}>{{statusOption.value}}</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+
+<div style="padding-bottom:35px;">
+  <div class="row">
+    <mat-icon class="icon-style" [inline]="true">add_circle_outline</mat-icon>
+    <mat-label class="icon-test">EDIT BUSINESS FUNCTIONS</mat-label>
+  </div>
+  <div class="row">
+    <mat-icon class="icon-style" [inline]="true">add_circle_outline</mat-icon>
+    <mat-label class="icon-test">EDIT TASK QUEUES</mat-label>
+  </div>
+</div>
+
+<div class="save-button">
+  <button type="submit" style="width: 8%;" mat-flat-button color="primary" class="perlss-click-button">SAVE</button>
+</div>
+</form>

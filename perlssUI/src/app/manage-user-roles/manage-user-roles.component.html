@@ -1,0 +1,46 @@
+<div class="pageMargin">
+   <div class="col required">
+      *Required
+   </div>
+   <div class="wrapper">
+      <div class="left">
+            <div class="box2Heading">
+               User Role
+            </div>
+            <div class="row" style="padding-left: 90px;padding-top: 15px;">
+               <div class="col-md-7 box2Content">
+                  Active User<br>Roles
+               </div>
+            </div>
+         <div>
+            <div class="box1Text" (click)="showActiveRecords()">
+               <u>{{rolesCount}}</u>
+            </div>
+         </div>
+      </div>
+      <div (click)="createUserRole()" class="right">
+         <div class="row">
+            <mat-icon class="icon-style" [inline]="true">
+               supervisor_account
+            </mat-icon>
+         </div>
+         <div class="box2Text">  
+            <b>CREATE NEW<br>USER ROLE</b>
+         </div>
+      </div>
+   </div>
+   <hr>
+   <div class="user-role-heading">
+      User Roles
+   </div>
+   <app-user-roles-table 
+      [showOnlyActive]="showOnlyActive" 
+      (emitRolesCount)="rolesCount = $event" 
+      (emitUserRoleEditMode)="editUserRole($event)">
+   </app-user-roles-table>
+   <app-create-edit-user-roles
+       *ngIf="showUserRoleScreen" 
+       [displayMode]="displayMode" 
+       [selectedRow]="selectedRow">
+   </app-create-edit-user-roles>
+</div>

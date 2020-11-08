@@ -1,0 +1,89 @@
+<script src="../assign-user/assign-user.component.spec.ts"></script><p style="padding-top: 25px;">Please use the criteria below to create a manual task.</p>
+<div style="width: 100%">
+    <mat-form-field style="width: 100%" appearance="outline">
+        <mat-label>Person Task Queue</mat-label>
+        <input matInput placeholder="Name:   | DOB: | SSN: | Person ID:" #input>
+    </mat-form-field>
+</div>
+<div class="row secondary-data-content">
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Select Task Queue</b></mat-label>
+        <mat-form-field appearance="outline" style="width: 100%;">
+                <select matNativeControl required>
+                    <option></option>
+                </select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Module</b></mat-label>
+        <mat-form-field appearance="outline" style="width: 100%;">
+                <select matNativeControl required>
+                    <option></option>
+                </select>
+        </mat-form-field>
+    </div>
+</div>
+
+<div class="row secondary-data-content">
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Record Type</b></mat-label>
+        <mat-form-field appearance="outline" style="width: 100%;">
+                <select matNativeControl required>
+                    <option></option>
+                </select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Record ID</b></mat-label>
+        <mat-form-field  appearance="outline" style="width: 100%;">
+            <input matInput type="text">
+        </mat-form-field>
+    </div>
+</div>
+<div class="row secondary-data-content">
+    <div class="col-md-6">
+        <mat-label><b>Assign User</b></mat-label>
+        <mat-form-field  appearance="outline" style="width: 100%;">
+          <input matInput type="text">
+          <button  mat-button matSuffix mat-icon-button (click)="showAssignUserDialog()">
+            <mat-icon >search</mat-icon>
+          </button>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Select Task Priority</b></mat-label>
+        <mat-form-field appearance="outline" style="width: 100%;">
+                <select matNativeControl required>
+                    <option></option>
+                </select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="row secondary-data-content">
+    <div class="col-md-6">
+        <mat-label><b>Person ID 1</b></mat-label>
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <input matInput type="text">
+          <button mat-button matSuffix mat-icon-button (click)="showAssignUserDialog()">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <mat-label><mat-label class="required-color">*</mat-label><b>Person ID 2</b></mat-label>
+        <mat-form-field  appearance="outline" style="width: 100%;">
+            <input matInput type="text">
+        </mat-form-field>
+    </div>
+</div>
+
+<div>
+    <mat-label><mat-label class="required-color">*</mat-label><b>Task Details</b></mat-label>
+    <div>
+      <textarea style="width: 100%;" #notesInput id="notesInput" maxlength="2000" formControlName="notes" rows="5" cols="45"></textarea>
+    </div>
+</div>
+<div style="font-style: italic;" class="text-area-hint"> Characters Remaining: {{notesInput.value?.length ? (2000 - notesInput.value?.length) : 2000 }}</div>
+<div class="create-manualtask-button">
+    <button mat-flat-button class="perlss-click-button">CREATE MANUAL TASK</button>
+</div>

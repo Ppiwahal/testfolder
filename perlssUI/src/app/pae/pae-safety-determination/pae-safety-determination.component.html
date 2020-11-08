@@ -1,0 +1,187 @@
+<div class="cus-cont">
+  <form [formGroup]="paeSafetyDeterminationFormGroup">
+     <div class="row">
+        <div class="col-md-4 offset-md-8">
+           <div class="applicant-name">
+              APPLICANT NAME : Jessica Jones
+           </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+          <h4 class="page-sub-heading">Safety Determination Request</h4>
+        </div>
+     </div>
+     <mat-card class="mat-elevation-z8 mar-bot">
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Safety Determination must be completed in its entirety along with all required documentation. An incomplete Safety Determination Request without documentation will be denied.
+          </p>
+          <p>
+            <strong>Note: </strong>
+            Documentation may consist of, but is not limited to, narrative descriptions or explanations from submitter, caregivers, or family members; hospital notes, therapy notes, MD visits, ADL flow sheets, encounter notes from nurses, therapists, or physicians; and any other documents which would demonstrate the safety concern(s) for the applicant.
+          </p>
+          <p>
+            Please check and complete <strong>ALL</strong> that apply.
+          </p>
+        </div>
+
+      </div>
+    </mat-card>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Does the applicant have an intellectual or developmental disability and a General Maladaptive Index value of -31 or lower? </p>
+          <p>
+            If yes, please attach a copy of Maladaptive Behavior Assessment and Score.
+          </p>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="intellectualDevDisablity">
+        <mat-radio-button class="example-radio-button" [value]="'Y'">
+           Yes
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" [value]="'N'">
+           No
+        </mat-radio-button>
+     </mat-radio-group>
+
+     <mat-error>
+      <p *ngIf="paeSafetyDeterminationFormGroup.get('intellectualDevDisablity').errors?.required && (paeSafetyDeterminationFormGroup.get('intellectualDevDisablity').touched || paeSafetyDeterminationFormGroup.get('intellectualDevDisablity').dirty)">
+        {{customValidation.A1}}
+      </p>
+    </mat-error>
+        </div>
+      </div>
+      <div class="row" *ngIf="paeSafetyDeterminationFormGroup.get('intellectualDevDisablity').value === 'Y'">
+        <div class="col-md-6">
+           <mat-form-field appearance="outline" class="wid-100">
+                 <mat-label><span class="req">*</span> ICAP Score</mat-label>
+                 <input matInput type="number" [max]="999" formControlName="icapScore">
+                 <mat-error>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('icapScore').errors?.required && (paeSafetyDeterminationFormGroup.get('icapScore').touched || paeSafetyDeterminationFormGroup.get('icapScore').dirty)">
+                       {{customValidation.A1}}
+                    </p>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('icapScore').errors?.specialCharacterValidator">
+                       {{customValidation.A2}}
+                    </p>
+                 </mat-error>
+              </mat-form-field>
+        </div>
+      </div>
+
+    <div class="card safety-justification" *ngIf="paeSafetyDeterminationFormGroup.get('intellectualDevDisablity').value === 'N'">
+      <div class="card-header card-head-custom">Safety Justification</div>
+      <mat-selection-list formControlName="safetyJustifications">
+      
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let sj of safetyJustificationList">
+            <mat-list-option checkboxPosition="before" color="primary" class="mar-10-right" [value]="sj.value">
+              {{sj.text}}
+            </mat-list-option>
+        </li>
+      </ul>
+      <mat-error>
+        <p *ngIf="paeSafetyDeterminationFormGroup.get('safetyJustifications').errors?.required  && (paeSafetyDeterminationFormGroup.get('safetyJustifications').touched || paeSafetyDeterminationFormGroup.get('safetyJustifications').dirty)">
+          {{customValidation.A1}}
+        </p>
+        <p *ngIf="paeSafetyDeterminationFormGroup.get('safetyJustifications').value?.length === 1 && paeSafetyDeterminationFormGroup.get('safetyJustifications').value.indexOf('15') > -1 &&
+        (paeSafetyDeterminationFormGroup.get('safetyJustifications').touched || paeSafetyDeterminationFormGroup.get('safetyJustifications').dirty)">
+          {{customValidation.A44}}
+        </p>
+      </mat-error>
+    </mat-selection-list>
+    </div>
+    <mat-divider class="marg-15"></mat-divider>
+    <div class="row">
+        <div class="col-md-12">
+          <h4 class="page-sub-heading">Safety Attestation</h4>
+          <p><b>Please read and attest by selecting atleast one of the statement below. (Select all that apply)</b></p>
+        </div>
+     </div>
+
+     <div class="row selection-list" *ngFor="let attestation of safetyAttestations" [ngClass]="{'selected-choice': attestation.selected, 'unselected-choice': !attestation.selected}" (click)="attestation.selected = !attestation.selected">
+       <div class="col-md-10">
+        <span>{{attestation.text}}</span>
+       </div>
+       <div class="col-md-2 text-right">
+        <div class="flex-container">
+         <mat-icon> offline_pin</mat-icon>
+        </div>
+       </div>
+     </div>
+     <p><b> Please read the statement below and sign that you understand.</b></p>
+     <p>
+      
+I, as a licensed professional, take responsibility for the information provided in this safety Determination request and attest that I have personally reviewed the information provided in 
+this Safety Determination Request and it is accurate and true to the best of my knowledge. I understand that this information will be used to determine the applicant's eligibility and/or reimbursement for long-term care services. I understand that any intentional act or omission on my part to provide false information or give a false impression that would potentially result in a person obtaining benefits for coverage to which s/he is not entitled may be considered an act of fraud under the state's TennCare program and Title XIX of the Social Security Act. I further understand that, under the Tennessee Medicaid False Claims Act, any person who presents or causes to be presented to the state a claim for payment under the TennCare program knowing such claim us false or fraudulent may be subject to federal and state civil and criminal penalties.
+     </p>
+     <div class="row">
+        <div class="col-md-6 ">
+              <mat-form-field appearance="outline" class="wid-100" >
+                 <mat-label><span class="req">*</span> Qualified Accessor Name</mat-label>
+                  <mat-select placeholder="Qualified Accessor Name" formControlName="qualifiedAccessorName">
+                    <mat-option value="name1">Name 1</mat-option>
+                 </mat-select>
+                 <mat-error>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('qualifiedAccessorName').errors?.required && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorName').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorName').dirty)">
+                       {{customValidation.A1}}
+                    </p>
+                    <p *ngIf="!isQualifiedAccessorNameCodeMatch('qualifiedAccessorName') && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorName').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorName').dirty)">
+                       {{customValidation.A56}}
+                    </p>
+                 </mat-error>
+              </mat-form-field>
+              </div>
+     </div>
+      <div class="row">
+           <div class="col-md-6 ">
+              <mat-form-field appearance="outline" class="wid-100" >
+                 <mat-label><span class="req">*</span> Qualified Accessor Code</mat-label>
+                 <input matInput spellcheck="false" [maxlength]="10" formControlName="qualifiedAccessorCode">
+                 <mat-error>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').errors?.required && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').dirty)">
+                       {{customValidation.A1}}
+                    </p>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').errors?.specialCharacterValidator">
+                       {{customValidation.A2}}
+                    </p>
+                     <p *ngIf="!isQualifiedAccessorNameCodeMatch('qualifiedAccessorCode') && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').dirty)">
+                       {{customValidation.A56}}
+                    </p>
+                    <p *ngIf="isAccessorCodeExpired('qualifiedAccessorCode') && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').dirty)">
+                       {{customValidation.A57}}
+                    </p>
+                    <p *ngIf="!isAccessorCodeValid('qualifiedAccessorCode') && (paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').touched || paeSafetyDeterminationFormGroup.get('qualifiedAccessorCode').dirty)">
+                       {{customValidation.A37}}
+                    </p>
+                 </mat-error>
+              </mat-form-field>
+              </div>
+               <div class="col-md-6 ">
+              <mat-form-field appearance="outline" class="wid-100" >
+                 <mat-label><span class="req">*</span> Credentials</mat-label>
+                  <mat-select placeholder="Credentials" formControlName="credential">
+                    <mat-option value="cred1">cred 1</mat-option>
+                 </mat-select>
+                 <mat-error>
+                    <p *ngIf="paeSafetyDeterminationFormGroup.get('credential').errors?.required && (paeSafetyDeterminationFormGroup.get('credential').touched || paeSafetyDeterminationFormGroup.get('credential').dirty)">
+                       {{customValidation.A1}}
+                    </p>
+                 </mat-error>
+              </mat-form-field>
+              </div>
+            </div>
+  </form>
+</div>
+
+ <div class="row">
+   <div class="col-6">
+     <button mat-flat-button color="primary" (click)="back()"
+       class="perlss-click-button-white">BACK</button>
+       <button mat-flat-button color="primary" (click)="callTestModal()"
+       class="perlss-click-button-white-noborder">Save and Exit</button>
+   </div>
+   <div class="col-6 text-right">
+     <button mat-flat-button color="primary"
+       (click)="saveSafetyDetermination();" class="perlss-click-button">NEXT</button>
+   </div>
+ </div>

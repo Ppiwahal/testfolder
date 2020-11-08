@@ -1,0 +1,323 @@
+<div class="cus-cont">
+  <form [formGroup]="paeActivitiesDailyLivingFormGroup">
+     <div class="row">
+        <div class="col-md-4 offset-md-8">
+           <div class="applicant-name">
+              APPLICANT NAME : Jessica Jones
+           </div>
+        </div>
+     </div>
+     <mat-card class="mat-elevation-z8 mar-bot">
+      <div class="row">
+        <div class="col-md-12">
+        
+          <p>
+            <strong>Note: </strong>
+             Please select the checkboxes below if the child requires consistent assistance in these activities of daily living or major skill areas for the next 12 months across all settings, including home, school, and community. The activities listed below are loaded based on the child's current age.
+          </p>
+        
+        </div>
+
+      </div>
+    </mat-card>
+    
+    <h4 class="page-sub-heading">Transfer</h4>
+     <div class="card">
+      <div class="card-header card-head-custom">
+        <div class="row">
+          <div class="col-md-9"><b class="align-middle">Activity</b></div>
+          <div class="col-md-1 min-100"><b>Reported Response</b></div>
+          <div class="col-md-1 min-100"><b>Confirmed Response</b></div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child needs physical help with transfers.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="needPhyRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="neddPhyConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child uses mechanical lifts.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="mechLiftRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="mechLiftConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <p class="marg-top">If no selection displayed applies for the Activity of Daily Living, please indicate that below:</p>
+  <mat-checkbox formControlName="transferNoneSw" (change)="transferNoneChange($event.checked)" class="example-margin">None of the statements above apply</mat-checkbox>
+  <mat-error>
+    <p *ngIf="getPaeActivitiesDailyLivingForm.transferNoneSw.errors?.notAllowedNone">
+      {{customValidation.A33}}
+    </p>
+  </mat-error>
+  <mat-divider class="marg-15"></mat-divider>
+
+
+
+    <h4 class="page-sub-heading">Mobility</h4>
+     <div class="card">
+      <div class="card-header card-head-custom">
+        <div class="row">
+          <div class="col-md-9"><b class="align-middle">Activity</b></div>
+          <div class="col-md-1 min-100"><b>Reported Response</b></div>
+          <div class="col-md-1 min-100"><b>Confirmed Response</b></div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">Unable to maintain sitting position when placed.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="sitPositionRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="sitPositionConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">Unable to move self by rolling, crawling, or creeping.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="rollingRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="rollingConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <p class="marg-top">If no selection displayed applies for the Activity of Daily Living, please indicate that below:</p>
+  <mat-checkbox formControlName="mobilityNoneSw" (change)="mobilityNoneChange($event.checked)" class="example-margin">None of the statements above apply</mat-checkbox>
+  <mat-error>
+    <p *ngIf="getPaeActivitiesDailyLivingForm.mobilityNoneSw.errors?.notAllowedNone">
+      {{customValidation.A33}}
+    </p>
+  </mat-error>
+  <mat-divider class="marg-15"></mat-divider>
+
+
+   <h4 class="page-sub-heading">Eating</h4>
+     <div class="card">
+      <div class="card-header card-head-custom">
+        <div class="row">
+          <div class="col-md-9"><b class="align-middle">Activity</b></div>
+          <div class="col-md-1 min-100"><b>Reported Response</b></div>
+          <div class="col-md-1 min-100"><b>Confirmed Response</b></div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child needs to be fed.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="needsFedRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="needsFedConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child needs one on one monitoring to prevent choking, aspiration, or other serious complications.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="chokingRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="chokingConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child needs help with tube feeding or TPN.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="tubeFeedRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="tubeFeedConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child does not use language to share information besides basic needs or wants.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="needsWantsRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="needsWantsConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <p class="marg-top">If no selection displayed applies for the Activity of Daily Living, please indicate that below:</p>
+  <mat-checkbox formControlName="eatingNoneSw" (change)="eatingNoneChange($event.checked)" class="example-margin">None of the statements above apply</mat-checkbox>
+  <mat-error>
+    <p *ngIf="getPaeActivitiesDailyLivingForm.eatingNoneSw.errors?.notAllowedNone">
+      {{customValidation.A33}}
+    </p>
+  </mat-error>
+  <mat-divider class="marg-15"></mat-divider>
+
+
+    <h4 class="page-sub-heading">Toileting</h4>
+     <div class="card">
+      <div class="card-header card-head-custom">
+        <div class="row">
+          <div class="col-md-9"><b class="align-middle">Activity</b></div>
+          <div class="col-md-1 min-100"><b>Reported Response</b></div>
+          <div class="col-md-1 min-100"><b>Confirmed Response</b></div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child is inconsistent during the day(of bowel and/or bladder).</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="incontDayRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="incontDayConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child of inconsistent of bowel during the night.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="incontNightRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="incontNightConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child is inconsistent of bowel and/or bladder.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="bowelBladdRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="bowelBladdConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <p class="marg-top">If no selection displayed applies for the Activity of Daily Living, please indicate that below:</p>
+  <mat-checkbox formControlName="toiletingNoneSw" (change)="toiletingNoneChange($event.checked)" class="example-margin">None of the statements above apply</mat-checkbox>
+  <mat-error>
+    <p *ngIf="getPaeActivitiesDailyLivingForm.toiletingNoneSw.errors?.notAllowedNone">
+      {{customValidation.A33}}
+    </p>
+  </mat-error>
+  <mat-divider class="marg-15"></mat-divider>
+
+    <h4 class="page-sub-heading">Bathing</h4>
+     <div class="card">
+      <div class="card-header card-head-custom">
+        <div class="row">
+          <div class="col-md-9"><b class="align-middle">Activity</b></div>
+          <div class="col-md-1 min-100"><b>Reported Response</b></div>
+          <div class="col-md-1 min-100"><b>Confirmed Response</b></div>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child is combative during bathing (e.g. flails, takes 2 caregivers to accomplish task).</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="combatBathRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="combatBathConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child need physical help with bathing tasks.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="phyHelpBathRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="phyHelpBathConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+         <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child needs to be lifted in and out of the bathtub or shower.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="bathtubRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="bathtubConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child need step-by-step cueing to complete the task.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="cueingRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="cueingConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-9">The child lacks an understanding of risk and must be supervised for safety.</div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="riskSafetyRepResSw" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-md-1 check-col">
+              <mat-checkbox formControlName="riskSafetyConResSw" class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <p class="marg-top">If no selection displayed applies for the Activity of Daily Living, please indicate that below:</p>
+  <mat-checkbox formControlName="bathingNoneSw" (change)="bathingNoneChange($event.checked)" class="example-margin">None of the statements above apply</mat-checkbox>
+  <mat-error>
+    <p *ngIf="getPaeActivitiesDailyLivingForm.bathingNoneSw.errors?.notAllowedNone">
+      {{customValidation.A33}}
+    </p>
+  </mat-error>
+  <mat-divider class="marg-15"></mat-divider>
+
+  </form>
+</div>
+
+ <div class="row">
+   <div class="col-6">
+     <button mat-flat-button color="primary" (click)="back()"
+       class="perlss-click-button-white">BACK</button>
+       <button mat-flat-button color="primary" (click)="back()"
+       class="perlss-click-button-white-noborder">Save and Exit</button>
+   </div>
+   <div class="col-6 text-right">
+     <button mat-flat-button color="primary"
+       (click)="savePaeActvitiesDailyLiving();" class="perlss-click-button">NEXT</button>
+   </div>
+ </div>

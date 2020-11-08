@@ -1,0 +1,4 @@
+{
+  "API_URL": "http://localhost:8083/core",
+  "ADMIN_API_URL":"http://localhost:8082"
+}

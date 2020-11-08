@@ -1,0 +1,85 @@
+h2 {
+  font-size: 1.7vw;
+  line-height: 2vw;
+  font-weight: 700;
+  margin: 0;
+  padding: 1.1vw 0 .3vw 0;
+  color: #547E1A;
+  font-family: 'Open Sans';
+  margin: 0.8vw 0 0.5vw 0;
+}
+
+.page-header-container{
+  .row{
+    .col-md-4{
+    border: 2px solid;
+    border-color: #4D7E20;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    }
+  }
+}
+
+.applicant-name-container{
+    padding: 1vw;
+    vertical-align: middle;
+    justify-content: center;
+    font-size: 1.1vw;
+}
+.button-container{
+  padding-top: 5vh;
+  .row{
+    .col-md-2{
+      text-align: left;
+    }
+    .col-md-4{
+      text-align: left;
+    }
+    .col-md-6{
+      text-align: right;
+    }
+    .perlss-click-button, .perlss-click-button-white-noborder, .perlss-click-button-white{
+      font-size: 1.4vw !important;
+    }
+  }
+}
+
+.form-container{
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  margin-top: 5vh;
+}
+
+.kb-checkbox-container{
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+.additional-section-container{
+  padding-top: 5vh;
+}
+.radio-container{
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.date-facility-container{
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+.checkbox-column{
+  display: inline-block;
+  width:48%;
+  padding-top: 1.0vh;
+}
+::ng-deep .mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled{
+  cursor: not-allowed;
+}
+
+.required-color {
+  color: #EE3524;
+}

@@ -1,0 +1,211 @@
+
+
+.required {
+
+  float: right;
+  
+  position: absolute;
+  right: 3vm;
+  
+  right: 3vm;
+  font-size: 1.4vw;
+  color: #e21515;
+  padding: 0 3vm 2vm 0;
+  font-size: 1.2vm;
+
+  > span {
+    font-size: 2vw;
+  }
+}
+
+.pae-back {
+  color: #1B365D;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#perlss-sidenavbar{
+  width:280px;
+}
+
+.sidenav-menu-toggle-icon{
+  font-size: 35px;
+  cursor: pointer;
+  color: #ED6053;
+}
+.sidenav-menu-toggle-icon-closed{
+  font-size: 35px;
+  cursor: pointer;
+  color: #ED6053;
+}
+.perlss-account-name{
+  color: #174A7C;
+  font-family: "Open Sans";
+}
+
+.mat-card-subtitle {
+  color: #174A7C;
+  font-family: "Open Sans";
+}
+
+.sidenav-menu-icon {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 2px;
+  width: 60px;
+  position: fixed;
+  color:  #1B365D;
+}
+.sidenav-menu-details{
+
+  padding-bottom: 15px;
+  color: #303F47;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.sidenav-submenu-details{
+  margin-left: 45px;
+  padding-bottom: 15px;
+  color: #303F47;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.pageError {
+  font-size: 15px;
+  margin: 20px 0 0 0;
+}
+
+.sideNavMenu-main {  
+  > div {
+    > div {
+      margin: 4px 4px 19px 4px;
+      padding: 0;
+      width: calc(100% - 8px);
+      overflow: hidden;
+      height: auto;
+      cursor: pointer;
+      &:focus { 
+        outline: none;
+      }
+
+      &:first-child {
+        margin-top: 19px;
+      }
+      
+      > div.parent {
+
+        margin: 0;
+        padding: 4px 0 6px 0;
+        width: 100%;
+        height: auto;
+        &:focus { 
+          outline: none;
+        }
+
+        &:hover {
+          background: #eaeeff;
+        }
+        
+        > mat-icon {
+          color: #FF8800;
+          margin: 1px 4px 0 12px;
+          padding: 0;
+          font-size: 24px;
+          line-height: 24px;
+          width: 26px;
+          height: 18px;
+          display: block;
+          float: left;
+        
+          &.green {
+            color: green;
+          }
+        }
+
+        p {
+          display: block;
+          font-weight: 600;
+          margin: 3px 0 0 0;
+          padding: 0;
+          overflow: hidden;
+          width: calc(100% - 90px);
+          float: left;
+          line-height: 19px;
+          font-size: 15px;
+
+          + mat-icon {
+              display: block;
+              margin: 0 19px 0 0;
+              padding: 0;
+              float: right;
+              height: 19px;
+              width: 19px;
+              font-size: 23px;
+              color: #999999;
+          }
+        }
+
+        + div {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+
+          > p { 
+            font-size: 10px;
+            font-style: italic;
+            display: block;
+            margin: 5px 10px 0 50px;
+            width: calc(100% - 60px);
+          }
+
+          > div {
+
+            > div.selectedChild {
+              background: #cbdcf3;
+
+              &:hover {
+                background: #cbdcf3;
+              }
+            }
+
+            > div.disabled {
+              color: #cccccc;
+              cursor: not-allowed;
+
+              &:hover {
+                background: transparent;
+              }
+            }
+
+            > div {
+
+              padding: 3px;
+              margin: 10px 0 0 0;
+              width: calc(100% - 5px - 4px);
+            
+              &:focus { 
+                outline: none;
+              }
+            
+              &:hover {
+                background: #eaeeff;
+              }
+
+              > div {
+                width: calc(100% - 77px);
+                font-size: 15px;
+                line-height: 17px;
+                margin: 3px 0 3px 51px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

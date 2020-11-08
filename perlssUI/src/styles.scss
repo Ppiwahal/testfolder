@@ -1,0 +1,1514 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@include mat-core();
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.perlss_page_content {
+
+  > mat-card {
+    padding: 0;
+  }
+
+  #footer-bot {
+    a {
+      display: block;
+      margin-top: 15px;
+    }
+  }
+  .row > button {
+    margin-right: 3vw;
+    margin-bottom: 1vw;
+  }
+
+  .perlss-page-header-card {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    > h1 {
+      float: left;
+      margin: 30px 0 0 40px;
+    }
+
+    .required {
+      font-size: 16px;
+      padding: 0;
+      text-align: right;
+      position: absolute;
+      bottom: 15px;
+      margin: 0;
+      right: 60px;
+    }
+  }
+}
+.ng-dropdown-panel .scroll-host {
+  position: absolute !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.mat-drawer-inner-container {
+
+  > mat-card {
+
+    padding: 0;
+    margin: 0;
+
+    > .perlss-account-card {
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      > .mat-card-avatar {
+        margin-left: 20px;
+        border-radius: 0;
+        width: 48px;
+        padding-top: 8px;
+        float: left;
+        overflow: hidden;
+      }
+
+      .mat-card-header-text {
+        float: left;
+        padding: 0 20px 0 0;
+        margin: 0;
+
+        + div {
+          float: left;
+          padding: 10px 0 0 0;
+          margin: 0;
+        }
+
+      }
+
+      > div.row {
+        width: calc(100% - 70px);
+        height: 22px;
+        padding: 0;
+        display: block;
+        margin: 42px 20px 0 20px;
+
+        > mat-icon {
+          width: 10px;
+          font-size: 22px;
+          display: block;
+          float: left;
+        }
+
+        > .pae-back {
+          display: block;
+          float: right;
+        }
+
+      }
+    }
+  }
+}
+
+app-leftnav, app-pae {
+  position: fixed;
+  height: auto;
+  top: calc(8.843537vw + 44px);
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  mat-sidenav-container.perlss-sidenav-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding:0;
+
+    > mat-sidenav-content {
+
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      padding: 0;
+      margin: 0;
+
+      > * { display: none; }
+
+      > .perlss_page_content {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+
+        > mat-card {
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 112px;
+          border-radius: 0;
+          border-left: 15px solid #CCCCCC;
+          border-bottom: 1px solid #AAAAAA;
+          box-shadow: none !important;
+          background: white;
+        }
+
+        > .page-footer-container {
+          position: absolute;
+          top: 113px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0;
+          padding: 0;
+
+          > .page-scroller {
+
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            > app-footer {
+              display: block;
+              width: 100%;
+            }
+
+            > .page-container {
+              width: 100%;
+              background: white;
+              height: auto;
+              overflow: hidden;
+              min-height: calc(100% - 103px);
+              border-bottom: 15px solid #CCCCCC;
+              border-left: 15px solid #CCCCCC;
+
+            }
+          }
+        }
+      }
+    }
+
+    > mat-sidenav {
+
+      > div.mat-drawer-inner-container {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+
+        > mat-card {
+          display: block;
+          position: absolute;
+          border-bottom: 1px solid #AAAAAA;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 112px;
+          border-radius: 0;
+          box-shadow: none !important;
+        }
+
+        div.sideNavMenu {
+          display: block;
+          position: absolute;
+          top: 113px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          div.sideNavScroller {
+            padding: 12px;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+          }
+
+        }
+
+      }
+    }
+  }
+
+  mat-card {
+    border-radius: 0 !important;
+  }
+}
+
+.pageMargin {
+  padding: 2.5vw;
+}
+
+.perlss-icon{
+  color: #EA5E52;
+}
+
+.perlss-click-button{
+  background-color: #174A7C !important;
+  color: white !important;
+}
+
+.perlss-click-button-white{
+  background-color: white !important;
+  color: #174A7C !important;
+  border: 1px solid #1B365D !important;
+}
+
+.perlss-click-button-white-noborder{
+  background-color: white !important;
+  color: #174A7C !important;
+}
+
+@font-face {
+  font-family: 'Permian Slab';
+  src: url(./assets/fonts/PermianSlabSerifTypeface-webfont.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Permian Slab';
+  src: url(./assets/fonts/PermianSlabSerifTypeface-Bold-webfont.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./assets/fonts/OpenSans-Bold-webfont.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./assets/fonts/OpenSans-BoldItalic-webfont.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./assets/fonts/OpenSans-Italic-webfont.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./assets/fonts/OpenSans-Regular-webfont.woff) format('woff');
+}
+
+h1 {
+  font-family: 'Permian Slab';
+  letter-spacing: 50;
+  font-weight: bold;
+  font-size: 32px;
+  color: #174A7C;
+}
+
+h2 {
+  font-family: 'Permian Slab',serif;
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 28px;
+  color: #174A7C;
+}
+
+h3 {
+  font-family: 'Permian Slab',serif;
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 24px;
+  color: #174A7C;
+}
+
+h4 {
+  font-family: 'Permian Slab',serif;
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 20px;
+  color: #174A7C;
+}
+
+h5 {
+  font-family: 'Open Sans';
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 18px;
+  color: #6E7073;
+}
+
+h6 {
+  font-family: 'Permian Slab';
+  letter-spacing: 50;
+  font-weight: bold !important;
+  font-size: 17px;
+  color: #174A7C;
+}
+
+h7 {
+  font-family: 'Open Sans';
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 15px;
+  color:#6E7073
+}
+
+h8 {
+  font-family: 'Open Sans';
+  letter-spacing: 50;
+  font-weight: normal;
+  font-size: 14px;
+  color: #6E7073
+}
+
+body {
+  font-size: calc(100vw / 1200px * 18px);
+  line-height: calc(100vw / 1200px * 22px);
+}
+
+body:not(mat-icon) {
+  color: #6E7073;
+  font-family: 'Open Sans';
+}
+
+.ng-select.ng-select-multiple .ng-select-container {
+  min-height: 47px !important;
+  padding-right: 15px;
+  position: relative;
+  background-color: transparent;
+}
+
+$perlsspalette: (
+  50 : #e3e9ef,
+  100 : #b9c9d8,
+  200 : #8ba5be,
+  300 : #5d80a3,
+  400 : #3a6590,
+  500 : #174a7c,
+  600 : #144374,
+  700 : #113a69,
+  800 : #0d325f,
+  900 : #07224c,
+  A100 : #81aaff,
+  A200 : #4e88ff,
+  A400 : #1b66ff,
+  A700 : #0255ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$perlss-app-primary: mat-palette($mat-indigo);
+$perlss-app-accent: mat-palette($perlsspalette, 600, 500, 900);
+$perlss-app-warn: mat-palette($mat-red);
+$perlss-app-theme: mat-light-theme($perlss-app-primary, $perlss-app-accent, $perlss-app-warn);
+@include mat-checkbox-theme($perlss-app-theme);
+@include mat-radio-theme($perlss-app-theme);
+
+.dialog-success {
+  background-color: #4D7E20;
+  color: #fff;
+}
+.dialog-error{
+  background-color: #EA5E52;
+  color: #fff;
+}
+.kb-event {
+  background-color: #4C90D3 !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+.ecf-event {
+  cursor: pointer;
+  background-color: #4D7E20 !important;
+  color: #fff !important;
+}
+.fc-event-title{
+  text-align: center !important;
+}
+
+
+//global styles
+
+div.responsive {
+
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  //position: relative;
+
+  mat-divider {
+    margin-bottom: 1.3vw;
+  }
+
+  .mat-icon {
+     font-size: 1.3vw;
+     display: inline-block;
+     width: 1.4vw;
+     position: relative;
+     top: 0.3vw;
+     &.red {
+      color: #cc0000;
+     }
+     &.green {
+      color: rgb(6, 172, 6);
+     }
+     &.orange {
+      color: rgb(238, 120, 110);
+     }
+     &.blue {
+       color: rgb(76, 144, 211);
+     }
+  }
+
+  dl {
+    > dt, > dd {
+      font-size: 1vw;
+      font-family: 'Open Sans';
+    }
+
+    > dt {
+      float: left;
+      margin-left: 0.5vw;
+      display: block;
+      width: 7vw;
+    }
+  }
+
+  &.dialog {
+
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
+    > div.form, form {
+
+      height: calc(100% - 3.5vw);
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin:0;
+
+      > .scroller {
+        top: 0;
+        bottom: 3.5vw;
+        left: 0;
+        right: 0;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+
+        p {
+          margin: 0 0 0.8vw 0;
+          padding: 0;
+          width: 100%;
+        }
+      }
+
+      > .buttonBar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3.5vw;
+        border-top: 1px solid #CCCCCC;
+
+        > button {
+          font-size: 0.8vw !important;
+        }
+      }
+    }
+
+    > .header {
+      width: 100%;
+      height: 3.5vw;
+      overflow: hidden;
+      display: block;
+      border-bottom: 1px solid #aaaaaa;
+      position: absolute;
+      top: 0;
+
+      h1 {
+        font-size: 1.5vw;
+        float: left;
+        font-weight: 700;
+        color: #265ba5;
+        margin: 1vw 0 1.3vw 3vw;
+        width: calc(100% - 8vw);
+      }
+      mat-icon {
+        display: block;
+        padding: 0;
+        background: transparent;
+        border: none;
+        font-size: 2vw;
+        width: 2vw;
+        height: 2vw;
+        line-height: 2.2vw;
+        margin: 0;
+        position: absolute;
+        top: 0.7vw;
+        right: 1vw;
+        color: #aaaaaa;
+      }
+    }
+
+    > form, div.form {
+      top: 3.5vw;
+    }
+  }
+
+  > form, div.form {
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: block;
+
+    .applicantName {
+
+      float: right;
+      background: white;
+      width: auto;
+      line-height: 0.9vw;
+      height: auto;
+      border: 2px solid green;
+      font-size: 1vw;
+      margin: 0 0 0 0;
+      padding: .6vw 1.1vw .6vw .8vw;
+      position: relative;
+      top: 1.2vw;
+
+      & + h2, & + h3 {
+        margin-top: -2vw;
+      }
+
+      &::before {
+        content: "APPLICANT NAME:";
+        display: inline-block;
+        font-weight: 600;
+        margin-right: 0.3vw;
+        padding: 0;
+        color: #666666;
+      }
+    }
+
+    p {
+      margin: 0 0 0.5vw 0;
+      padding: 0;
+    }
+
+    button.perlss-click-button {
+      font-size: 1.1vw;
+      padding: 0.2vw 0.6vw;
+    }
+
+    .buttonBar {
+
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      height: 5vw;
+      padding: 0.8vw 3vw 0 3vw;
+
+      button.perlss-click-button-white-noborder,
+      button.perlss-click-button, button.perlss-click-button-white,
+      button.mat-flat-button, button.mat-primary {
+        font-size: 1.2vw;
+        min-width: 4vw;
+        float: left;
+        margin: 0 2vw 0 0;
+        padding: 0.2vw 0.6vw;
+
+        &:last-child {
+          float: right;
+          margin: 0;
+        }
+      }
+
+      &.floatedRight {
+        padding-left: 1vw;
+        padding-right: 1vw;
+        button.perlss-click-button-white-noborder,
+        button.perlss-click-button, button.perlss-click-button-white,
+        button.mat-flat-button, button.mat-primary {
+          float: right;
+          margin-left: 2vw;
+          margin-right: 0;
+        }
+      }
+    }
+
+    mat-checkbox, mat-label {
+      font-size: 1vw;
+      line-height: 1.3vw;
+      padding: 0;
+    }
+
+    .buttonMenu {
+      background: gray;
+      padding: 2vw;
+      > button {
+        margin-right: 2vw;
+      }
+    }
+
+    .applicantData {
+
+      width: 100%;
+      padding: 2vw 3vw;
+      margin: 0;
+      background: #f6faff;
+
+      overflow: hidden;
+      height: auto;
+
+      > hr {
+        height: 2px;
+        margin: .5vw 0.5vw 1.5vw .5vw;
+        padding: 0;
+        width: calc(100% - 1vw);
+        border-top: 1px solid #a0bcdd;;
+      }
+
+      > div {
+        width: calc(100% - 0.4vw);
+        margin: 0 0.2vw;
+        overflow: hidden;
+        height: auto;
+
+        > div {
+          margin: 0;
+          width: calc(50% - 1vw);
+          height: auto;
+          float: left;
+
+          + div {
+            float: right;
+          }
+
+          > label {
+            float: left;
+            font-size: 1vw;
+            font-weight: 700;
+            width: calc(40%);
+            display: block;
+            margin: 0.2vw 0 0 0.1vw;
+            color: #444444;
+          }
+
+          > div {
+            background: #ffffff;
+            font-size: 1vw;
+            padding: 0.3vw 0.6vw;
+            height: 2.2vw;
+            float: right;
+            margin: 0 0 1.2vw 0;
+            width: calc(60% - .8vw);
+
+
+            &.tbd {
+              color: #a30e0e;
+            }
+
+          }
+        }
+      }
+    }
+
+    mat-form-field.mat-form-field {
+
+      + mat-checkbox, + mat-label, + mat-error {
+        margin: -0.8vw 0 1vw 0.3vw;
+        display: block;
+        font-size: 1vw;
+        padding: 0;
+        top: 0;
+        right: 0;
+
+        > p {
+          margin: 0 0 0.3vw 0;
+          padding: 0;
+        }
+
+      }
+
+      > .mat-form-field-wrapper {
+
+        > .mat-form-field-flex {
+          > div.mat-form-field-infix {
+
+            > input:focus, input.ng-touched.ng-valid, select:focus, select.ng-touched.ng-valid {
+
+                & + span.mat-form-field-label-wrapper, + mat-datepicker + span.mat-form-field-label-wrapper {
+
+                  > label.mat-form-field-label {
+
+                    > mat-label {
+                      font-size: 1vw;
+                    }
+                    margin-top: -0.3vw;
+                  }
+                }
+            }
+
+            > span.mat-form-field-label-wrapper {
+
+              margin: 0;
+              padding: 0;
+
+              mat-error {
+                font-size: 1vw;
+              }
+
+              > label.mat-form-field-label {
+                display: inline-block;
+                padding: 0 0 0.5vw 0;
+                margin-bottom: 0.5vw;
+
+                > mat-label {
+                  margin: 0 !important;
+
+                  &.req {
+
+                    margin: 0;
+                    padding: 0 0 0 0.6vw;
+                    position: relative;
+                    top: -0.2vw;
+
+                    &::before {
+                      font-size:1.3vw;
+                      line-height: 1.5vw;
+                      padding: 0;
+                      margin:0;
+                      text-indent:0;
+                      height: 0.9vw;
+                      position: relative;
+                      left: -0.5vw;
+                      top: 0.3vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .checkbox-group {
+
+      width: calc(100% - 2vw);
+
+      > mat-label {
+        padding: 0 0 0.5vw 0.5vw;
+        display: inline-block;
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.1vw;
+        + mat-error {
+          padding: 0;
+          margin: -0.3vw 0 0 0.1vw;
+        }
+      }
+
+      mat-error {
+        font-size:1vw;
+      }
+
+
+      div.inline {
+
+        height: auto;
+        width: 100%;
+
+        > mat-checkbox {
+          display: block;
+          float: left;
+          width: auto;
+        }
+
+        div.inline-wrapper {
+          overflow: visible;
+          width: 16vw;
+          height: 2vw;
+          display: block;
+          float: left;
+          margin: -0.3vw 0 1vw 0.3vw;
+
+          input[type='text'] {
+            width: 16vw;
+            margin: 0;
+            height: 1.6vw;
+            padding: 0.3vw;
+            font-size: 0.8vw;
+            border: 1px solid #CCCCCC;
+            border-radius: 0.2vw;
+            display: inline-block;
+
+            &.is-invalid {
+              border-color: red;
+            }
+
+            mat-error {
+              margin: 0 0 0 0.1vw;
+              font-size: 1vw;
+            }
+          }
+
+        }
+      }
+
+      mat-checkbox {
+        margin: 0 0 0 .7vw;
+        padding: 0;
+        height: auto;
+        display: block;
+
+        .mat-checkbox-layout {
+
+          margin: 0 0 0.9vw 0.5vw;
+          padding: 0;
+
+          .mat-checkbox-inner-container {
+            padding: 0;
+            left: 0.2vw;
+            height: 0.9vw;
+            width: 0.9vw;
+          }
+
+          .mat-checkbox-label {
+            padding: 0;
+            position: static;
+            margin: 0 0 0 0.4vw;
+            display: inline-block;
+            font-size: 1vw;
+            line-height: 1.2vw;
+
+            mat-label {
+              padding: 0;
+              margin: 0;
+            }
+
+          }
+        }
+
+        mat-label {
+          margin-right: 2vw;
+        }
+      }
+    }
+
+    .scroller {
+
+      height: auto;
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      padding: 3vw 3vw;
+      margin: 0;
+
+      .checkbox-element {
+        margin-top: 1.3vw;
+        display: inline-block;
+      }
+
+      &.noScroll {
+        overflow: hidden;
+        overflow-y: hidden;
+      }
+
+      &.noPad {
+        padding: 0;
+      }
+
+      .testButtons > button {
+        border: none;
+        padding: 0.3vw;
+        font-size: 1.1vw;
+        margin: 1vw;
+      }
+
+
+      .padded {
+        padding: 0.3vw 3.2vw 0.9vw 3.2vw;
+      }
+
+      .alert {
+
+        border: 1px solid red;
+        padding: 1vw;
+        width: 60%;
+        margin: 2vw 0;
+
+        > label {
+
+          display: block;
+          float: left;
+          display: block;
+          color: red;
+          font-weight: 700;
+          font-size: 1.1vw;
+          margin: 0 0.5vw 0 0;
+          padding: 0;
+          height: 100%;
+
+          &::before {
+            content: "error_outline";
+            font-family: 'Material Icons';
+            display: block;
+            float: left;
+            height: 3vw;
+            width: 3vw;
+            color: red;
+            font-size: 2.5vw;
+            margin: 0 0.15vw 0 0;
+            padding: 0;
+            position: relative;
+            top: -1vw;
+          }
+        }
+
+        > p {
+            font-size: 1vw;
+            width: calc(100% - 4vw);
+            display: block;
+            margin: 0.1vw 0 0 2vw;
+            padding:0;
+        }
+      }
+
+      .dropDownIcons {
+        mat-icon {
+          font-size: 4vw;
+        }
+      }
+
+      .row.wide {
+        padding: 1.2vw 0;
+
+        .perlss-click-button {
+          width: calc(100% - 2vw);
+        }
+      }
+
+      h3 {
+        font-size: 1vw;
+        font-family: 'Open Sans';
+        margin: 1.3vw 0 .7vw 0;
+        font-weight: 600;
+        color: rgba(218, 15, 15, 0.938);
+
+        + mat-radio-group {
+          margin-top: -0.5vw;
+        }
+
+        + div {
+          padding-left: 1vw;
+          width: calc(100% - 1vw);
+        }
+
+        &.lineAbove {
+
+          margin-left: 0.2vw;
+
+          &::before {
+            content: "";
+            display: block;
+            margin: 1vw 0 0.5vw 0;
+
+            padding: 0;
+            border-top: 1px solid #CCCCCC;
+          }
+        }
+
+      }
+
+      p {
+        font-size: 1vw;
+        width: calc(100% - 4vw);
+        margin: 0 0 0.5vw 0.1vw;
+      }
+
+      table, table.activityTable {
+        width: calc(100% - 3vw);
+        margin: 0 0 0.5vw 0.05vw;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 0.5vw;
+
+        > thead  > th {
+          overflow: hidden;
+          font-size: 1vw;
+          padding: 0.7vw 1vw;
+          height: 2vw;
+          border: none;
+          background: #cdddf4;
+          vertical-align: middle;
+          font-weight: 600;
+          text-align: center;
+
+          &:first-child  {
+            text-align: left;
+            border-top-left-radius: 0.5vw;
+          }
+
+          &:last-child {
+            border-top-right-radius: 0.5vw;
+          }
+        }
+
+        > tbody > tr {
+
+          > td {
+            font-size: 0.9vw;
+            text-align: center;
+            padding: 0.7vw 1vw;
+            border-right: none;
+            border-left: none;
+            border-bottom: 2px solid #cdddf4;
+            width: 15vw;
+
+            &:first-child  {
+              text-align: left;
+              width: auto;
+              border-left: 2px solid #cdddf4;
+            }
+
+            &:last-child  {
+              border-right: 2px solid #cdddf4;
+            }
+          }
+
+          &.strong > td {
+            font-weight: 800;
+          }
+
+          &:last-child > td:first-child {
+            border-bottom-left-radius: 0.5vw;
+          }
+
+          &:last-child > td:last-child {
+            border-bottom-right-radius: 0.5vw;
+          }
+        }
+      }
+
+      hr {
+        width: calc(100% - 5vw);
+        display: block;
+        border-color: #666666;
+      }
+
+      table + hr {
+        margin-top: 1.5vw;
+        margin-bottom: 1.5vw;
+        margin-left: 1vw;
+        padding:0;
+      }
+
+      h3 + table, h3 + table.activityTable {
+        margin-top: 1.2vw;
+      }
+
+      table.documentTable {
+        border-color: #888888;
+        box-shadow: 0.2vw 0.2vw 0.5vw #999999;
+        border: 1px solid #888888;
+
+        > thead {
+
+          > th {
+            background: white;
+            border-bottom: 1px solid #888888;
+          }
+
+          &:first-child {
+            width: auto;
+          }
+        }
+
+        > tbody > tr {
+
+          &:first-child > td {
+            background: linear-gradient(180deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 15%);
+          }
+
+          &:last-child > td {
+            border-bottom: none;
+          }
+
+          > td {
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #888888;
+            width: 5vw;
+
+            &:first-child {
+              width: auto;
+            }
+
+            > mat-icon {
+              font-size: 1.7vw;
+              width: 2.4vw;
+            }
+          }
+
+        }
+
+      }
+
+      table.searchPersonTable {
+        margin: 3vw 0 3vw 0;
+
+        > tbody > tr.addressRow {
+          > td {
+            padding: 0;
+
+            > div {
+              display: block;
+              width: 100%;
+              height: 5vw;
+              margin: 0;
+
+              > div {
+                float: left;
+                margin: 0;
+                padding: 0;
+                height: 6vw;
+                font-size: 1.2vw;
+                line-height: 1.4vw;
+                width: calc((100% - 20vw) / 3);
+                padding-bottom: 0.4vw;
+
+                > p {
+                  margin: 1.2vw 0 0 0;
+                  font-size: 0.9vw;
+                  line-height: 1.1vw;
+                  display: block;
+                  text-align: center;
+                  font-weight: 700;
+
+                  + p {
+                    font-weight: 400;
+                    margin: 0.2vw 0 0 0;
+                  }
+                }
+
+                &:last-child {
+                  width: 20vw;
+
+                  > div {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+
+                    > button.perlss-click-button-white {
+                      font-size: 1vw;
+                      padding: 0.1vw 0.5vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .mat-card-header {
+
+        > h1 {
+          font-size: 2vw;
+          margin: 0 0 0.5vw 0;
+        }
+      }
+
+      .row {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .row {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        overflow: hidden;
+
+        > div {
+          overflow: hidden;
+          height: auto;
+        }
+
+      }
+
+      .message {
+        background: #f6faff;
+        padding: 0.6vw 3.1vw 0.5vw 3.1vw;
+
+        > p {
+          font-size: 0.9vw;
+          line-height: 1.2vw;
+        }
+
+        * :last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        font-size: 1vw;
+        line-height: 1.3vw;
+        margin: 0.5vw 0.5vw 1.3vw 0.2vw;
+        padding: 0;
+
+
+        + h2 {
+          border-top: 1px solid #aaaaaa;
+        }
+
+      }
+
+      h2 {
+        font-size: 1.7vw;
+        line-height: 2vw;
+        font-weight: 700;
+        margin: 0;
+        padding: 1.1vw 0 .3vw 0;
+        color: #547E1A;
+      }
+
+      h2 {
+        font-family: 'Open Sans';
+        margin: 0.8vw 0 0.5vw 0;
+      }
+
+      .control {
+        margin-bottom: 0.5vw;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+        display: block;
+
+        mat-error.mat-error {
+          font-size: 1vw;
+          display: block;
+          width: 100%;
+          width: calc(100% - 3vw);
+        }
+
+        > label, mat-label {
+          display: block;
+          float: none;
+          margin: 0;
+          padding: 0 0 0.3vw 1.6vw;
+          font-size: 1.1vw;
+          line-height: 1.3vw;
+          height: auto;
+          overflow: hidden;
+
+          &.req {
+
+            text-indent: -0.5vw;
+
+            + mat-radio-group, + mat-error + mat-radio-group {
+              margin: 0 0 0 1vw;
+            }
+
+            + mat-error {
+                margin: -0.2vw 0 0 1.85vw;
+            }
+          }
+        }
+
+        > mat-form-field {
+          clear: all;
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .req {
+
+        text-indent: -1vw;
+        padding-left: 1.2vw;
+        width: calc(100% - 3vw);
+
+        &::before {
+          content: "*";
+          color: #e21515;
+          position: relative;
+          display: inline-block;
+          font-size: 1.3vw;
+          margin-left: 0;
+          width: 0.24vw;
+          left: -0.1vw;
+          top: 0.1vw;
+        }
+      }
+
+      .perlss-click-button {
+        margin: 2vw 3vw;
+
+        &.search-person-button {
+          width: calc(100% - 6vw);
+        }
+      }
+
+      mat-radio-group {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 1.3vw 1vw;
+
+        + mat-divider {
+          margin-top: 1.5vw;
+        }
+
+        > mat-label {
+          font-size: 1.1vw;
+          margin: 0 0 0.3vw 0.2vw !important;
+          padding: 0 0 0 0.2vw !important;
+          display: inline-block;
+          line-height: 1.3vw;
+
+          &.req {
+            text-indent: -0.4vw;
+            margin: 0 0 0 0.8vw;
+            padding: 0;
+
+            &::before {
+              width: 0.3vw;
+              margin: 0;
+            }
+
+          }
+        }
+
+        mat-radio-button {
+
+          display: table;
+          max-width: calc(100% - 4vw);
+          margin: 0.3vw 0 0.6vw 0.7vw;
+          display: table;
+
+          > label.mat-radio-label {
+            display: table-row;
+
+            > .mat-radio-container {
+              padding: 0;
+              height: auto;
+              display: table-cell;
+              width: 1.7vw;
+              padding: 0.2vw 0.4vw 0.2vw 0.2vw;
+              vertical-align: top;
+
+
+              > .mat-radio-outer-circle, .mat-radio-inner-circle {
+                width: 1.1vw;
+                height: 1.1vw;
+              }
+
+              .mat-ripple {
+                width: 1.4vw;
+                height: 1.4vw;
+                padding: 0;
+                top: -0.15vw;
+                left:-0.15vw;
+
+              }
+
+            }
+
+            > .mat-radio-label-content {
+              word-wrap: break-word;
+              font-family: 'Open Sans';
+              font-size: 1vw;
+              line-height: 1.2vw;
+              padding: 0;
+              margin: 0;
+              max-width: 100%;
+              display: table-cell;
+              vertical-align: top;
+              white-space: pre-wrap;
+            }
+
+          }
+
+        }
+      }
+
+      .textArea {
+
+        margin: 0 0 1vw 0;
+
+        label, mat-label {
+          font-size: 1vw;
+          line-height: 1.2vw;
+        }
+
+        label {
+          margin-left: 0;
+          width: calc(100%-2vw);
+        }
+
+        > textarea {
+          width: calc(100% - 2vw);
+          height: 6vw;
+          margin: 0.2vw 0 0 0.1vw;
+          font-size: 0.9vw;
+          line-height: 1.1vw;
+          padding: 0.2vw;
+          display: block;
+        }
+
+        > p {
+          text-align: right;
+          display:block;
+          color: #999999;
+          font-size: 0.8vw !important;
+          line-height: 0.9vw !important;
+          margin: 0;
+          width: calc(100% - 2vw);
+
+        }
+      }
+
+      .w40 {
+        width: 40%;
+      }
+      .w60 {
+        width: 60%;
+      }
+      .w70 {
+        width: 70%;
+      }
+      .w80 {
+        width: 80%;
+      }
+    }
+  }
+}

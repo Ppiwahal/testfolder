@@ -1,0 +1,65 @@
+<div class="row-header">
+  <span class="col-lg-9 dialog-heading">
+    Update Task
+  </span>
+<span class="col-lg-3 text-right close-icon">
+    <mat-icon (click)=close()>highlight_off</mat-icon>
+  </span>
+</div>
+<mat-divider class="perlss-section-divider"></mat-divider>
+
+<div class="update-task-content">
+<div style="padding-bottom:25px;padding-top:25px;padding-left: 65px;font-size: 11px;font-family: 'Open Sans'">
+<table style="width: 80%;">
+  <tr class="d-flex">
+    <td class="col-3"><b>Task Queue:</b></td>
+    <td class="col-5">NA</td>
+    <td class="col-3"><b>Person Name:</b></td>
+    <td class="col-4">{{taskDetails?.firstName }} {{taskDetails?.lastName}}</td>
+  </tr>
+  <tr class="d-flex">
+    <td class="col-3"><b>Grand Region:</b></td>
+    <td class="col-5">{{taskDetails?.grandRegionCd}}</td>
+    <td class="col-3"><b>Record ID:</b></td>
+    <td class="col-4">{{taskDetails?.referalId}}</td>
+  </tr>
+  <tr class="d-flex">
+    <td class="col-3"><b>Task Priority:</b></td>
+    <td class="col-5">{{taskDetails?.prioritySw}}</td>
+    <td class="col-3"><b>Task Created:</b></td>
+    <td class="col-4">{{taskDetails?.createDt}}</td>
+  </tr>
+  <tr class="d-flex">
+    <td class="col-3"><b>Task Status:</b></td>
+    <td class="col-5">{{taskDetails?.taskStatusCd}}</td>
+    <td class="col-3"><b>Task Due Date:</b></td>
+    <td class="col-4">{{taskDetails?.createDte}}</td>
+  </tr>
+</table>
+</div>
+<mat-divider class="perlss-section-divider"></mat-divider>
+<form [formGroup]="closeTaskForm"  (ngSubmit)="closeTask()">
+<div class="row-header">
+<span class="col-lg-9 task-dialog-heading">
+  Task Closure
+</span>
+</div>
+<div style="padding-left: 30px;">
+<mat-label><mat-label class="required-color">*</mat-label><b>Closure Details</b></mat-label>
+<div>
+  <textarea style="width: 95%;" formControlName="notes" #notesInput id="notesInput" maxlength="2000" rows="5" cols="45"></textarea>
+</div>
+</div>
+
+<div style="padding-left: 30px; font-style: italic;" class="text-area-hint">
+Characters Remaining: {{notesInput.value?.length ? (2000 - notesInput.value?.length) : 2000 }}
+</div>
+
+<div class="create-manualtask-button">
+  <button type="submit" style="height: 50px;" mat-flat-button class="perlss-click-button">CLOSE TASK</button>
+</div>
+</form>
+
+<mat-divider class="perlss-section-divider"></mat-divider>
+<app-assign-user [displayMode]="'update'" *ngIf="taskDetails && (taskDetails.taskStatusCd === 'NW' || taskDetails.taskStatusCd === 'A')"></app-assign-user>
+</div>

@@ -1,0 +1,94 @@
+<div class="row-header">
+  <span class="col-lg-9 dialog-heading">
+      Edit User Profile
+  </span>
+  <span class="col-lg-3 text-right close-icon">
+    <mat-icon (click)=close()>highlight_off</mat-icon>
+  </span>
+</div>
+<mat-divider class="perlss-section-divider"></mat-divider>
+
+<div style="font-size: 12px;font-family: 'Open Sans'">
+  <table class="table table-borderless">
+    <tr class="d-flex">
+      <td class="col-2"><b>Username:</b></td>
+      <td class="col-4">{{this.userProfile?.userName}}</td>
+      <td class="col-2"><b>Entity:</b></td>
+      <td class="col-4">{{this.userProfile?.entityDetails[0]?.entityCd}}</td>
+    </tr>
+    <tr class="d-flex">
+      <td class="col-2"><b>First Name</b></td>
+      <td class="col-4">{{this.userProfile?.firstName}}</td>
+      <td class="col-2"><b>MI</b></td>
+      <td class="col-4">{{this.userProfile?.mi}}</td>
+    </tr>
+    <tr class="d-flex">
+      <td class="col-2"><b>Last Name</b></td>
+      <td class="col-4">{{this.userProfile?.lastName}}</td>
+      <td class="col-2"><b>Suffix</b></td>
+      <td class="col-4">{{this.userProfile?.suffix}}</td>
+    </tr>
+    <tr class="d-flex">
+      <td class="col-2"><b>Complete?</b></td>
+      <td class="col-3">{{this.userProfile?.entityDetails[0]?.completeSw}}</td>
+    </tr>
+  </table>
+</div>
+
+<form [formGroup]="editUserProfileForm" (ngSubmit)="editUserProfile()">
+<div class="container">
+<div class="row row-cols-2">
+  <div class="col">
+      <mat-label><mat-label class="required-color">*</mat-label><b>User Role:</b></mat-label>
+          <ng-select [items]="userRolesItems" formControlName="userRoles"
+              bindLabel="name"
+              appendTo="body"
+              multiple="true"
+             >
+          </ng-select>
+        </div>
+  <div class="col">
+      <mat-label><mat-label class="required-color">*</mat-label><b>Classification</b></mat-label>
+      <mat-form-field appearance="outline" style="width: 100%;">
+              <select matNativeControl formControlName="classification">
+                  <option value="Leadership -(Contributor, Manager or Leadership)">Leadership -(Contributor, Manager or Leadership)</option>
+              </select>
+      </mat-form-field>
+  </div>
+<div class="col" *ngIf="this.userProfile?.entityDetails[0]?.regionConsideredSw === 'Y'">
+  <mat-label><mat-label class="required-color">*</mat-label><b>Region</b></mat-label>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <select matNativeControl formControlName="region">
+      <option value="Central">Central</option>
+    </select>
+  </mat-form-field>
+</div>
+<div class="col" *ngIf="f.classification.value !== 'contributor'">
+  <mat-label><mat-label class="required-color">*</mat-label><b>Managed User Roles:</b></mat-label>
+  <ng-select *ngIf="f.classification.value === 'Leadership -(Contributor, Manager or Leadership)'" [items]="ManagedRolesItems" formControlName="managedUserRoles"
+             bindLabel="name"
+             appendTo="body"
+             multiple="true"
+  >
+  </ng-select>
+  <mat-form-field appearance="outline" style="width: 100%;" *ngIf="f.classification.value === 'manager'">
+    <select  matNativeControl formControlName="managedUserRoles">
+      <option value="appeal_worker">Appeals Workers</option>
+      <option value="pae_worker">PAE - Worker</option>
+    </select>
+  </mat-form-field>
+</div>
+<div class="col">
+  <mat-label><mat-label class="required-color">*</mat-label><b>Status:</b></mat-label>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <select matNativeControl formControlName="status">
+      <option value="Active">Active</option>
+    </select>
+  </mat-form-field>
+</div>
+</div>
+</div>
+<div class="save-button">
+  <button mat-flat-button color="primary" class="perlss-click-button" type="submit">SAVE</button>
+</div>
+</form>

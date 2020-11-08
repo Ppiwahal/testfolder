@@ -1,0 +1,60 @@
+<div class="row-header">
+    <span class="col-lg-9 dialog-heading">
+      View User Profile
+    </span>
+    <span class="col-lg-3 text-right close-icon">
+      <mat-icon (click)=close()>highlight_off</mat-icon>
+    </span>
+  </div>
+  <mat-divider class="perlss-section-divider"></mat-divider>
+
+  <div style="font-size: 11px;font-family: 'Open Sans'">
+    <table class="table table-borderless">
+      <tr class="d-flex">
+        <td class="col-2"><b>USERNAME:</b></td>
+        <td class="col-3">{{ data.firstName }}</td>
+        <td class="col-3"><b>STATUS:</b></td>
+        <td class="col-4">{{ data.statusCd }}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>FIRST NAME:</b></td>
+        <td class="col-3">{{ data.firstName }}</td>
+        <td class="col-3"><b>USER ROLE(S):</b></td>
+        <td *ngFor = 'let role of data.userRoles; let isLast=last'>{{ role }}{{isLast ? '' : ','}}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>LAST NAME:</b></td>
+        <td class="col-3">{{ data.lastName }}</td>
+        <td class="col-3"><b>MANAGED USER ROLES</b></td>
+        <td class="col-4">LTSS Slot Management, LTSS Appeals</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>EMAIL ADDRESS:</b></td>
+        <td class="col-3">{{ data.email }}</td>
+        <td class="col-3"><b>LAST LOG IN:</b></td>
+        <td class="col-4">{{ data.lastLoginDt }}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>PHONE NUMBER:</b></td>
+        <td class="col-3">{{ data.phone }}</td>
+        <td class="col-3"><b>LAST UPDATED:</b></td>
+        <td class="col-4">{{ data.lastModifiedDt }}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>ENTITY:</b></td>
+        <td class="col-3">{{ data.entityId }}</td>
+        <td class="col-3"><b>DATE PROVISIONED:</b></td>
+        <td class="col-4">{{ data.provisionedDt }}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>REGION:</b></td>
+        <td class="col-3">{{ data.regionCd }}</td>
+        <td class="col-3"><b>DATE DEPROVISIONED:</b></td>
+        <td class="col-4">{{ data.deprovisionedDt }}</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-2"><b>COMPLETE?:</b></td>
+        <td class="col-10">{{ data.lastName }}</td>
+      </tr>
+    </table>
+  </div>

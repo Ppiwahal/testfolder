@@ -1,0 +1,170 @@
+<div class="pageMargin">
+
+  <ng-container *ngIf="isKbProgram">
+    <div [class]="isKbProgramSelected? 'choicesGroup1AndHcbsSelected' : 'choicesGroup1AndHcbs'">
+      <div class="row" (click)="onKBClicked()">
+        <div class="col-md-2"><strong>KATIE BECKETT</strong></div>
+        <div class="col-md-8">Program for children under the age of 18 with disabilities or
+          complex medical needs who are not otherwise Medicaid eligible.</div>
+        <div *ngIf="isKbProgramSelected" class="col-md-2">
+          <mat-icon>offline_pin</mat-icon>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!isKbProgram">
+
+    <div *ngIf="isChoicesGroupOne" class="group-container">
+      <ng-container>
+        <div [class]="isChoicesGroupOneSelected? 'choicesGroup1AndHcbsSelected' : 'choicesGroup1AndHcbs'">
+          <div class="row" (click)="onChoicesGroupOneClicked()">
+            <div class="col-md-2"><strong>CHOICES GROUP 1</strong></div>
+            <div class="col-md-8">Provides Nursing Facility services.</div>
+            <div *ngIf="isChoicesGroupOneSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div *ngIf="isChoicesHcbs" class="group-container">
+      <ng-container>
+        <div [class]="isChoicesHcbsSelected? 'choicesGroup1AndHcbsSelected' : 'choicesGroup1AndHcbs'">
+          <div class="row" (click)="onChoicesHcbsClicked()">
+            <div class="col-md-2"><strong>CHOICES HCBS</strong></div>
+            <div class="col-md-8">Provides Home and Community Based Services as an alternative to Nursing Facility
+              Services.
+            </div>
+            <div *ngIf="isChoicesHcbsSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="isEcfChoiceFour" class="group-container">
+      <ng-container>
+        <div [class]="isEcfChoiceFourSelected? 'ecfChoicesSelected' : 'ecfChoices'">
+          <div class="row" (click)="onEcfChoiceFourClicked()">
+            <div class="col-md-2"><strong>ECF CHOICES GROUP 4</strong></div>
+            <div class="col-md-8">Essential Family Supports.</div>
+            <div *ngIf="isEcfChoiceFourSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div *ngIf="isEcfChoiceFive" class="group-container">
+      <ng-container>
+        <div [class]="isEcfChoiceFiveSelected? 'ecfChoicesSelected' : 'ecfChoices'">
+          <div class="row" (click)="onEcfChoiceFiveClicked()">
+            <div class="col-md-2"><strong>ECF CHOICES GROUP 5</strong></div>
+            <div class="col-md-8">Essential Supports for Employment and Independent Living.</div>
+            <div *ngIf="isEcfChoiceFiveSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="isEcfChoiceSix" class="group-container">
+      <ng-container>
+        <div [class]="isEcfChoiceSixSelected? 'ecfChoicesSelected' : 'ecfChoices'">
+          <div class="row" (click)="onEcfChoiceSixClicked()">
+            <div class="col-md-2"><strong>ECF CHOICES GROUP 6</strong></div>
+            <div class="col-md-8">Comprehensive Supports for Employment and Community Living.</div>
+            <div *ngIf="isEcfChoiceSixSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div *ngIf="isEcfChoiceSeven" class="group-container">
+      <ng-container>
+        <div [class]="isEcfChoiceSevenSelected? 'ecfChoicesSelected' : 'ecfChoices'">
+          <div class="row" (click)="onEcfChoiceSevenClicked()">
+            <div class="col-md-2"><strong>ECF CHOICES GROUP 7</strong></div>
+            <div class="col-md-8">Intensive Behavioral Family Supports.</div>
+            <div *ngIf="isEcfChoiceSevenSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="isEcfChoiceEight" class="group-container">
+      <ng-container>
+        <div [class]="isEcfChoiceEightSelected? 'ecfChoicesSelected' : 'ecfChoices'">
+          <div class="row" (click)="onEcfChoiceEightClicked()">
+            <div class="col-md-2"><strong>ECF CHOICES GROUP 8</strong></div>
+            <div class="col-md-8">Comprehensive Behavioral Supports for Employment and Community Living.</div>
+            <div *ngIf="isEcfChoiceEightSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="isPace" class="group-container">
+      <ng-container>
+        <div [class]="isPaceSelected? 'paceProgramSelected' : 'paceProgram'">
+          <div class="row" (click)="onPaceClicked()">
+            <div class="col-md-2"><strong>PACE</strong></div>
+            <div class="col-md-8">Program of All-Inclusive Care for the Elderly (Hamilton County Only).</div>
+            <div *ngIf="isPaceSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="isIcfIid" class="group-container">
+      <ng-container>
+        <div [class]="isIcfIidSelected? 'icfCacSelected' : 'icfCac'">
+          <div class="row" (click)="onIcfIidClicked()">
+            <div class="col-md-2"><strong>ICF/IID</strong></div>
+            <div class="col-md-8">Institutional Care Facility for Individuals with Intellectual Disabilities.</div>
+            <div *ngIf="isIcfIidSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <div *ngIf="cac" class="group-container">
+      <ng-container>
+        <div [class]="cacSelected? 'icfCacSelected' : 'icfCac'">
+          <div class="row" (click)="onCacClicked()">
+            <div class="col-md-2"><strong>CAC</strong></div>
+            <div class="col-md-8">Comprehensive Aggregate CAP Waiver (Discharge from Harold Jordan Center Only).</div>
+            <div *ngIf="cacSelected" class="col-md-2">
+              <mat-icon>offline_pin</mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+  </ng-container>
+
+
+</div>

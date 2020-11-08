@@ -1,0 +1,29 @@
+.required {
+    font-size: 12px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.table-th{
+    font-size: 14px;
+    font-weight: bold;
+    color: #04537D;
+}
+
+.table-td{
+    border: 1px solid black;
+}
+
+table tr:last-child td {
+    border-bottom: 1px solid black;
+}
+
+
+table {
+    border: 1px solid black;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    line-height: 20px !important;
+}
+
